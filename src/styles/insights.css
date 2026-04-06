@@ -1,0 +1,214 @@
+.insights-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideUp 0.3s ease forwards;
+}
+
+.insights-page h2 {
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 2px;
+}
+
+.insights-page .page-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+}
+
+.insight-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.insight-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  animation: slideUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+.insight-card:nth-child(1) { animation-delay: 0.05s; }
+.insight-card:nth-child(2) { animation-delay: 0.1s; }
+.insight-card:nth-child(3) { animation-delay: 0.15s; }
+
+.insight-icon {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.insight-card h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.insight-value {
+  font-family: "Syne", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.insight-value.accent { color: var(--accent); }
+.insight-value.income { color: var(--income-color); }
+
+.insight-sub {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+}
+
+.monthly-comparison {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  animation: slideUp 0.4s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.monthly-comparison h3 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.monthly-comparison p {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.comparison-months {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.month-block {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+
+.month-block h4 {
+  font-size: 0.825rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-secondary);
+}
+
+.month-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.month-row:last-child {
+  margin-bottom: 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+  font-weight: 600;
+}
+
+.month-row .label {
+  color: var(--text-muted);
+}
+
+.month-row .val.income { color: var(--income-color); font-weight: 600; }
+.month-row .val.expense { color: var(--expense-color); font-weight: 600; }
+.month-row .val.positive { color: var(--income-color); font-weight: 700; }
+.month-row .val.negative { color: var(--expense-color); font-weight: 700; }
+
+.top-categories {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  animation: slideUp 0.4s ease 0.25s forwards;
+  opacity: 0;
+}
+
+.top-categories h3 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.top-categories p {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.category-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cat-bar-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 90px;
+  align-items: center;
+  gap: 12px;
+}
+
+.cat-bar-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cat-bar-track {
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cat-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cat-bar-val {
+  font-family: "Syne", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .insight-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .insight-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cat-bar-row {
+    grid-template-columns: 100px 1fr 80px;
+  }
+}
