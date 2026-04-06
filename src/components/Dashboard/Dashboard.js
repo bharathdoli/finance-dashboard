@@ -1,14 +1,13 @@
 import React, { useMemo } from "react";
 import {
   AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer,
-  BarChart, Bar, PieChart, Pie, Cell, Legend,
+  BarChart, Bar, PieChart, Pie, Cell,
 } from "recharts";
 import { useApp } from "../../context/AppContext";
 import { CATEGORIES } from "../../data/transactions";
 import { formatCurrency, groupByMonth, groupByCategory, getBalanceTrend } from "../../utils/helpers";
 import "../../styles/dashboard.css";
 
-const RADIAN = Math.PI / 180;
 
 function CustomTooltip({ active, payload, label }) {
   if (!active || !payload?.length) return null;
